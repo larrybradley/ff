@@ -22,6 +22,8 @@ impl<'a> Walker<'a> {
         let walker = WalkBuilder::new(&self.args.root_path)
             .hidden(self.args.ignore_hidden)
             .git_ignore(self.args.ignore_gitignore)
+            .git_global(self.args.ignore_gitignore)
+            .git_exclude(self.args.ignore_gitignore)
             .max_depth(self.args.level)
             .threads(self.args.threads)
             .build_parallel();
